@@ -1,8 +1,15 @@
 Parameters:
-  # Paramenters are entirely optional.
-  # but using them will make your cloudformation templates more reusable
-  # use them for things that may change over time, such as instance type,
-  # VPCs and so on.
+
+    KeyName:
+      Description: Name of existing EC2 key pait to enable SSH access to the instance
+      Type: String
+
+    InstanceTypeParameters:
+      Type : String
+      Default : t2.micro
+      AllowedValues : [t2.micro, m1.small, m1.large]
+      Description : Enter t2.micro, m1.small, or m1.large. Default is t2.micro.
+  
     EnvironmentName:
       Description: An environment name that will be prefixed to resource names
       Type: String
@@ -282,10 +289,10 @@ Resources:
           sudo aws s3 cp s3://vasulok-bucket/udacity.zip .
           sudo unzip -o udacity.zip
       ImageId: ami-0ac73f33a1888c64a
-      KeyName: private-server-devops-key
+      KeyName: !Ref KeyName
       SecurityGroups:
       - Ref: WebServerSecGroup
-      InstanceType: t2.small
+      InstanceType: !Ref InstanceTypeParameters
       BlockDeviceMappings:
       - DeviceName: "/dev/sdk"
         Ebs:
