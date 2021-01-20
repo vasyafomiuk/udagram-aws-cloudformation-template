@@ -2,7 +2,7 @@
 
 **To be able to use this template, first you need to create params.json file:**
 
-`
+
 [
 	{
 		"ParameterKey": "KeyName",
@@ -37,7 +37,7 @@
 		"ParameterValue": "10.0.3.0/24"
 	}
 ]
-`
+
 
 **Then, update user data for your servers. Specify some application server to spin up or use docker with some image.**
 
