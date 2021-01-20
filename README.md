@@ -1,6 +1,6 @@
-# This is a cloudformatino AWS tempalte
+# This is a AWS CloudFormation template
 
-**To be able to use this template, first you need to create params.json file:**
+**To be able to use this template, first you need to create a params.json file:**
 
 ```json
 [
